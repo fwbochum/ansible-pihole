@@ -1,6 +1,6 @@
 - name: Add ssh key
   ansible.posix.authorized_key:
-    key: https://github.com/{{ github_user_for_ssh_key }}.keys
+    key: https://github.com/{{ github_user_for_ssh_key }}.keys # key: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}" # Path to public ssh key in macOS user folder
     user: "{{ ansible_user }}"
     comment: "github-{{ github_user_for_ssh_key }}"
 
